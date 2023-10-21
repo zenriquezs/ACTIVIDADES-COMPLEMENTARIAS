@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Instructor</title>
+    <link rel="stylesheet" href="assets/css/styleManager.css">
+    <link rel="stylesheet" href="assets/css/styleGaleria.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/scriptManager.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <title>Calificaciones</title>
+</head>
+
+<body>
+    <div class="navigation">
+        <ul>
+            <li class="list">
+                <a href="interface_principal_instructor.html">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Ínicio</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="interface_manager.php">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="title">Perfil</span>
+                </a>
+            </li>
+            <li class="list active">
+                <a href="calificaciones.html">
+                    <span class="icon">
+                        <ion-icon name="mail-unread-outline"></ion-icon>
+                    </span>
+                    <span class="title">Calificaciones</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="title">Configuracion</span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="login_register.html">
+                    <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                    <span class="title">Salir</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="SectionTable">
+        <div class="table-container">
+            <table id="tablaAlumnosComplementaria" class="table">
+                <thead>
+                    <tr>
+                        <th>ID_ALUMNO</th>
+                        <th>NOMBRE_COMPLETO_ALUMNO</th>
+                        <th>NOMBRE_CARRERA</th>
+                        <th>ID_COMPLEMENTARIAS</th>
+                        <th>NOMBRE_COMPLEMENTARIA</th>
+                        <th>NIVEL_DE_DESEMPEÑO</th>
+                        <th>NUMERO_DE_COMPLEMENTARIA</th>
+                        <th>NUMERO_DE_CREDITOS</th>
+                        <th>ID_INSTRUCTOR</th>
+                        <th>PERIODO</th>
+                        <th>ACCION 1</th>
+                        <th>ACCION 2</th>
+                        <th>ACCION 3</th>
+                        <th>ACCION 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="ventana" id="vent">
+        <div class="style-part-sub-vent">
+            <div>
+                <h2>Información Alumno</h2>
+            </div>
+            <div>
+                <a href="javascript:void(0);" onclick="abrirVentanaInformacion();" id="cerrar ventana"> <img
+                        src="assets/img/icon-x.png" alt="icon-x"></a>
+            </div>
+        </div>
+
+        <div>
+            <h1>Datos Antiguos</h1>
+            <form action="assets/php/phpEditarDatos.php" method="post" class="formulario__register">
+                <input type="text" name="Matricula" placeholder="Matricula" id="matriculaInput" readonly>
+                <input type="text" name="ID-Complementaria" placeholder="ID Complementaria" id="idcomplementariaInput"
+                    readonly>
+                <input type="text" name="periodo" placeholder="Periodo" id="periodoInput" readonly>
+                <input type="text" name="nivel-de-desempeño" placeholder="Numero de complementaria" id="nivelDesemInput"
+                    readonly>
+                <input type="text" name="numero_complementaria" placeholder="Numero de complementaria"
+                    id="numeroComplementariaInput" readonly>
+            </form>
+
+        </div>
+        <div>
+            <h1>Datos Nuevos</h1>
+            <form action="assets/php/phpActualizarAlumnos.php" method="post" class="formulario__register"
+                id="miFormulario">
+                <input type="text" name="Matricula" placeholder="Matricula" id="matriculaInput2" readonly>
+                <input type="text" name="ID-Complementaria" placeholder="ID Complementaria" id="idcomplementariaInput2"
+                    readonly>
+                <select name="periodo" id="periodoInput2">
+                    <option value="Periodo">Periodo</option>
+                    <option value="Enero-Julio">Enero-Julio</option>
+                    <option value="Agosto-Septiembre">Agosto-Septiembre</option>
+                </select>
+                <select name="nivel-de-desempeno" id="nivelDesemInput2">
+                    <option value="">Elige una opción</option>
+                    <option value="Insuficiente">Insuficiente</option>
+                    <option value="Suficiente">Suficiente</option>
+                    <option value="Bueno">Bueno</option>
+                    <option value="Notable">Notable</option>
+                    <option value="Excelente">Excelente</option>
+                </select>
+                <select name="numero_complementaria" id="numeroComplementariaInput2">
+                    <option value="numero_complementaria">Numero de Complementaria</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit">Actualizar</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: 'assets/php/phpCalificaciones.php',
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var tbody = $('#tablaAlumnosComplementaria tbody');
+                    $.each(data, function (index, row) {
+                        var tr = $('<tr>');
+                        $.each(row, function (key, value) {
+                            tr.append('<td>' + value + '</td>');
+                        });
+                        tr.append('<td><a class="editar-btn"   href="javascript:void(0);" onclick="abrirVentanaInformacion();" id="mostrarVentana" data-id="' + row.ID_ALUMNO + '">Editar</a></td>');
+                        tr.append('<td><a class="eliminar-btn" href="javascript:void(0);" data-id="' + row.ID_ALUMNO + '">Eliminar</a></td>');
+                        tr.append('<td><a class="guardar-btn"  href="assets/php/PruebaV.php" target="_blank" data-id="' + row.ID_ALUMNO + '">Guardar Certificado</a></td>');
+                        tr.append('<td><a class="enviar-btn"  href="javascript:void(0);"  data-id="' + row.ID_ALUMNO + '">Enviar Certificado</a></td>');
+
+                        tbody.append(tr);
+                    });
+                    $('.guardar-btn').click(function () {
+                        var id = $(this).data('id');
+                        $.ajax({
+                            url: 'assets/php/PruebaV.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: { id_alumno: id },
+                            success: function (data) {
+
+                            }, error: function () {
+                                console.log('Error al obtener datos desde PHP.');
+                            }
+                        });
+                    });
+                    $('.editar-btn').click(function () {
+                        var id = $(this).data('id');
+                        $.ajax({
+                            url: 'assets/php/phpEditarDatos.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: { id_alumno: id },
+                            success: function (data) {
+                                var matricula = data.matricula;
+                                var idComplementaria = data.idComplementaria;
+                                var periodo = data.periodo;
+                                var numeroComplementaria = data.numeroComplementaria;
+                                var nivelDesempeño = data.nivelDesempeño;
+
+                                document.getElementById('matriculaInput').value = matricula;
+                                document.getElementById('idcomplementariaInput').value = idComplementaria;
+                                document.getElementById('matriculaInput2').value = matricula;
+                                document.getElementById('idcomplementariaInput2').value = idComplementaria;
+                                document.getElementById('periodoInput').value = periodo;
+                                document.getElementById('numeroComplementariaInput').value = numeroComplementaria;
+                                document.getElementById('nivelDesemInput').value = nivelDesempeño;
+                            },
+                            error: function () {
+                                console.log('Error al obtener datos desde PHP.');
+                            }
+                        });
+                    });
+                    $('.enviar-btn').click(function () {
+                        var id = $(this).data('id');
+                        $.ajax({
+                            url: 'assets/php/phpEmail.php',
+                            type: 'POST',
+                            dataType: 'json',
+                            data: { id_alumno: id },
+                            success: function (data) {
+
+                            }, error: function () {
+                                console.log('Error al obtener datos desde PHP.');
+                            }
+                        });
+                    });
+                    $('.eliminar-btn').click(function () {
+                        var id = $(this).data('id');
+                        if (confirm('¿Estás seguro de que deseas eliminar este registro?')) {
+                            $.ajax({
+                                url: 'assets/php/phpEliminarRegistro.php',
+                                type: 'POST',
+                                data: { id_alumno: id },
+                                success: function (response) {
+                                    alert(response);
+                                },
+                                error: function () {
+                                    console.log('Error al eliminar el registro.');
+                                }
+                            });
+                        }
+                    });
+                },
+                error: function (error) {
+                    console.log('Error: ' + error);
+                }
+            });
+        });
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/scriptUpdateCursa.js"></script>
+    <script src="assets/js/scriptObtenerDatos.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

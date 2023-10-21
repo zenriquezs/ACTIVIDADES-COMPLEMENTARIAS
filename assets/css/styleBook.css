@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap");
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "verdana", sans-serif;
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../img/floor.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.book
+{
+    position: relative;
+    top: 0;
+    width: 400px;
+    height: 600px;
+    background: #fff;
+    transform: rotate(-37.5deg) skewX(10deg);
+    box-shadow: -35px 35px 50px rgba(0, 0, 0, 1);
+    transition: 0.5s;
+}
+.book:hover
+{
+    transform: rotate(-37.5deg) skewX(10deg) translate(20px, -20px);
+    box-shadow: -50px 50px 100px rgba(0, 0, 0, 1);
+}
+.book::before
+{
+    content: '';
+    width: 30px;
+    height: 100%;
+    background: url(../img/itsoehzs.jpeg);
+    background-position: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewY(-45deg) translate(-30px,-15px);
+    box-shadow: inset -10px 0 20px rgba(0, 0, 0, 0.2);
+}
+.book::after
+{
+    content: '';
+    width: 100%;
+    height: 30px;
+    background: #ccc;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: skewX(-45deg) translate(15px, 30px);
+}
+.book h2
+{
+    position: absolute; 
+    bottom: 100px;
+    left: 20px;
+    font-size: 5em;
+    line-height: 1em;
+    color: #fff;
+}
+.book h2 span
+{
+    background: url(../img/itsoehh.webp);
+    background-attachment: fixed;
+    background-position: bottom right;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.book .writer
+{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #262626;
+    font-size: 0.6em;
+    padding-top: 5px;
+    border-top-left-radius: 1px solid #262626;
+}
+.book .writer i
+{
+    font-weight: 500;
+}
+.book .cover
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: url(../img/itsoehh.webp);
+    background-size: cover;
+}
+@media (max-width: 767px) 
+{
+    .book
+    {
+        transform: scale(0.75);
+    }
+    .book h2 span
+    {
+        font-size: 4rem;
+    }
+}

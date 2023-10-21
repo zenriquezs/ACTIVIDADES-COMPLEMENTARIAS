@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar o Registrarse</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styleLogin.css">
+
+</head>
+
+<body>
+    <div class="social-media">
+        <a href="index.html"><i class='bx bxs-home'></i></a>
+    </div>
+    <main>
+        <div class="contenedor__todo">
+            <div class="caja__trasera">
+                <div class="caja__trasera-login">
+                    <h3>¿Ya tienes una cuenta?</h3>
+                    <p>Inicia sesión para entrar en la página</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                </div>
+                <div class="caja__trasera-register">
+                    <h3>¿Aún no tienes una cuenta?</h3>
+                    <p>Regístrate para que puedas iniciar sesión</p>
+                    <button id="btn__registrarse">Regístrarse</button>
+                </div>
+            </div>
+
+            <!--Formulario de Login y registro-->
+            <div class="contenedor__login-register">
+                <!--Login-->
+                <form action="assets/php/phpLogin.php" method="post" class="formulario__login">
+                    <h2>Iniciar Sesión</h2>
+                    <div id="mensaje_error" class="mensaje_error"></div>
+                    <input type="text" name="usuarioLog" placeholder="Usuario" autocapitalize="username">
+                    <input type="password" name="passwordLog" placeholder="Contraseña" autocomplete="current-password">
+                    <button type="submit">Entrar</button>
+                </form>
+
+
+                <!--Register-->
+                <form action="assets/php/phpRegister.php" method="post" class="formulario__register">
+                    <h2>Regístrarse</h2>
+                    <input type="text" name="Matricula" placeholder="Matricula">
+                    <input type="text" name="NombreCompleto" placeholder="Nombre completo">
+                    <select name="Genero">
+                        <option value="Genero">Género</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                    <input type="text" name="CorreoElectronico" placeholder="Correo Electronico">
+                    <input type="text" name="Telefono" placeholder="Telefono">
+                    <select name="Carrera">
+                        <option value="Carrera">Carrera</option>
+                        <option value="1">Ingeniería TICS</option>
+                        <option value="2">Ingeniería Industrial</option>
+                        <option value="3">Ingeniería en Industrias Alimentarías</option>
+                        <option value="4">Ingeniería en Electromecánica</option>
+                        <option value="5">Ingeniería en Sistemas Computacionales</option>
+                        <option value="6">Ingeniería en Gestión Empresarial</option>
+                        <option value="7">Arquitectura</option>
+                        <option value="8">Ingeniería en Logística</option>
+                    </select>
+                    <select name="Tipo_de_Usuario">
+                        <option value="Tipo de Usuario">Tipo de Usuario</option>
+                        <option value="Alumno">Alumno</option>
+                        <option value="Instructor">Instructor</option>
+                    </select>
+                    <input type="text" name="Usuario" placeholder="Usuario">
+                    <input type="password" name="Contrasena" placeholder="Contraseña">
+                    <button>Regístrarse</button>
+                </form>
+            </div>
+</body>
+</div>
+</div>
+
+</main>
+
+<script src="assets/js/scriptLogin.js"></script>
+<script src="assets/js/scriptManager.js"></script>
+</body>
+
+</html>

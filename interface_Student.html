@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CUSTON CSS FILE -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/styleGaleria.css">
+
+    <!-- FONTAWOSE CSS LINK -->
+    <title>Complementarias ZS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="container flex">
+            <h1 class="logo"><img src="assets/img/LOGO_ITSOEH.png" alt="Logo" style="width: 150px; position: absolute; z-index: 1000; top:-15px;"></IMg></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#sec2">Curosos</a></li>
+                    <li><a href="javascript:void(0);" onclick="abrirVentanaInformacion();" id="mostrarVentana"><img
+                                src="assets/img/perfil2.png" alt="perfil" style="width: 30px; height: 30px;"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="ventana" id="vent">
+        <div class="style-part-sub-vent">
+            <div>
+                <h2>Información Alumno</h2>
+            </div>
+            <div><a href="javascript:void(0);" onclick="abrirVentanaInformacion();" id="cerrar ventana"> <img
+                        src="assets/img/icon-x.png" alt="icon-x"></a></div>
+        </div>
+        <div class="table-container">
+            <table id="tablaAlumnos" class="table">
+                <thead>
+                    <tr>
+                        <th>MATRICULA</th>
+                        <th>NOMBRE_ALUMNO</th>
+                        <th>GENERO</th>
+                        <th>EMAIL</th>
+                        <th>TELEFONO</th>
+                        <th>USUARIO</th>
+                        <th>TIPO_DE_USUARIO</th>
+                        <th>CONTRASEÑA</th>
+                        <th>CARRERA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="ventanaComplementarias" id="vent-Comple">
+        <div class="style-part-sub-vent-Complementarias">
+            <div>
+                <h2>Registro Complementarias</h2>
+            </div>
+            <div><a href="javascript:void(0);" onclick="abrirVentanaComplementaria();" id="cerrar ventana"> <img
+                        src="assets/img/icon-x.png" alt="icon-x"></a></div>
+        </div>
+        <div class="contenedor__login-register">
+            <form action="assets/php/phpRegisterComplementary.php" method="post" class="formulario__register">
+                <input type="text" name="Matricula" placeholder="Matricula" id="matriculaInput" readonly>
+                <input type="text" name="NombreCompleto" placeholder="Nombre completo" id="alumnoInput" readonly>
+                <select name="Nombre-actividad-Complementaria">
+                    <option value="0">Nombre actividad Complementaria</option>
+                    <option value="1">Club de IoT y Networking</option>
+                    <option value="2">Cursos Huawei Tali</option>
+                </select>
+                <select name="periodo">
+                    <option value="Periodo">Periodo</option>
+                    <option value="Enero-Julio">Enero-Julio</option>
+                    <option value="Agosto-Septiembre">Agosto-Septiembre</option>
+                </select>
+                <select name="numero_complementaria">
+                    <option value="numero_complementaria">Numero de Complementaria</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button type="submit">Regístrarse</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- showcase -->
+    <section class="showcase">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>Explorando las Oportunidades: Actividades Complementarias en ITSOEH</h1>
+                <p id="typed-paragraph"></p>
+                <a href="features.html" class="btn btn-outline">Mas sobre nosotros</a>
+            </div>
+            <div class="showcase-form card">
+                <div class="galeria-full">
+                    <div><img src="assets/img/mundoAnim.png" class="imgmundo" alt="imagen1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center">Bienvenido a la mejor plataforma para tomar cursos de todo tipo con
+                arquitectura y escalamiento modernos.</h3>
+            <div class="grid grid-3 text-center my-4">
+                <div>
+                    <i class="fas fa-server fa-3x"></i>
+                    <h3>10,349,405</h3>
+                    <p class="text-secondary">Deployments</p>
+                </div>
+                <div>
+                    <i class="fas fa-upload fa-3x"></i>
+                    <h3>987 TB</h3>
+                    <p class="text-secondary">Published</p>
+                </div>
+                <div>
+                    <i class="fas fa-project-diagram fa-3x"></i>
+                    <h3>12,343,265</h3>
+                    <p class="text-secondary">Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CLOUD -->
+    <section class="cloud bg-primary my-2 py-2" id="sec2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">Club de IoT y Networking</h2>
+                <p class="lead my-1">Si te apasiona la innovación tecnológica y quieres explorar el emocionante mundo de
+                    IoT y Networking ,has llegado al lugar adecuado.
+
+                </p>
+                <a href="javascript:void(0);" onclick="abrirVentanaComplementaria();" id="mostrarVentana"
+                    class="btn btn-dark">Registrarse</a>
+            </div>
+            <img src="./assets/img/cloud.png" alt="">
+        </div>
+    </section>
+    <!-- Footer -->
+
+    <!-- CLI -->
+    <section class="cli">
+        <div class="container grid">
+            <img src="./assets/img/IOT.jpeg" alt="" style="width: 500 px; border-radius: 10px;">
+            <div class="card">
+                <h3>Recursos de Aprendizaje</h3>
+            </div>
+            <div class="card">
+                <h3>Proyectos en Grupo</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOUD -->
+    <section class="cloud bg-primary my-2 py-2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">Extreme Cloud Hosting</h2>
+                <p class="lead my-1">Cloud hosting like you've never seen.Fast, efficient and scalable</p>
+                <a href="javascript:void(0);" onclick="abrirVentanaComplementaria();" id="mostrarVentana"
+                    class="btn btn-dark">Registrarse</a>
+            </div>
+            <img src="./assets/img/cloud.png" alt="">
+        </div>
+    </section>
+
+    <!-- CLI -->
+    <section class="cli">
+        <div class="container grid">
+            <img src="./assets/img/HuaweiOf.jpeg" alt="" style="width: 500 px; border-radius: 10px;">
+            <div class="card">
+                <h3>Curosos</h3>
+            </div>
+            <div class="card">
+                <h3>Certificaciones</h3>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div class="info-fot">
+                <p>DISEÑADO POR ENRIQUE
+                    ZUÑIGA ZUÑIGA ESTUDIANTE DE ITSOEH</a></p>
+                <p>Copyright &copy; 2023 </p>
+            </div>
+            <br><br><br>
+            <div class="social">
+                <a href="#"><i class="fab fa-github fa-2x"></i></a>
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/scriptRegisterComplementary.js"></script>
+    <script src="./assets/js/scriptObtenerDatos.js"></script>
+</body>
+
+</html>
