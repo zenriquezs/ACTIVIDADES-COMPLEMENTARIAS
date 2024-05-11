@@ -1,4 +1,4 @@
-# WEB_ACTIVIDADES_COMPLEMENTARIAS
+# SITIO WEB DE ACTIVIDADES COMPLEMENTARIAS
 
 Este repositorio contiene un sitio web para gestionar actividades complementarias. El objetivo principal es optimizar el tiempo al proporcionar documentos en formato PDF relacionados con actividades que pueden ser deportivas o sociales. Además, el sitio permite llevar un registro de asistencias y calificaciones.
 
@@ -20,7 +20,7 @@ Este repositorio contiene un sitio web para gestionar actividades complementaria
 
 - **PHP:** Se utiliza para la lógica del lado del servidor, permitiendo realizar operaciones como el almacenamiento de datos, la gestión de usuarios y la generación dinámica de contenido.
 
-## Capturas de pantalla:
+## Pantallas del Sitio Web:
 
 - **Página de inicio (Index):** ![Imagen index](https://drive.google.com/uc?id=1kRLr6_rnQ_ixhaiSkPrr1jEhdH9zU665)
 - **Menú principal:** ![Imagen menu](https://drive.google.com/uc?id=1Nl6939gaFKkQXqvIXk8KwyerWe1X81gN)
