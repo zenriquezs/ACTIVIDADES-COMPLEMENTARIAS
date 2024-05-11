@@ -1,6 +1,6 @@
 # WEB_ACTIVIDADES_COMPLEMENTARIAS
 
-Este repositorio contiene un sitio web desarrollado por Enrique Zuñiga Zuñiga para gestionar actividades complementarias. El objetivo principal es optimizar el tiempo al proporcionar documentos en formato PDF relacionados con actividades que pueden ser deportivas o sociales. Además, el sitio permite llevar un registro de asistencias y calificaciones.
+Este repositorio contiene un sitio web para gestionar actividades complementarias. El objetivo principal es optimizar el tiempo al proporcionar documentos en formato PDF relacionados con actividades que pueden ser deportivas o sociales. Además, el sitio permite llevar un registro de asistencias y calificaciones.
 
 ## Características principales:
 
