@@ -26,3 +26,5 @@ Este repositorio contiene un sitio web para gestionar actividades complementaria
 - **Menú principal:** ![Imagen menu](https://drive.google.com/uc?id=1Nl6939gaFKkQXqvIXk8KwyerWe1X81gN)
 
 Este proyecto es una herramienta útil para optimizar la gestión de actividades complementarias, ofreciendo una forma eficiente de proporcionar información, gestionar la asistencia y evaluar el rendimiento de los participantes.
+
+# Enrique ZS
